@@ -193,14 +193,6 @@ eval_statement(statement(until(Body)), State, State3) :-
     eval_program(Body,State,State2),
     state_stack_pop(State2,Val,State3),
     not(Val == 0).
-
-    % pętla until, coś w stylu do while w C :)
-    % TODO:
-    % 1. wykonaj program Body (eval_program/3)
-    % 2. zdejmij wartość ze stosu
-    % 3a. jeżeli wartość to 0 (false), to rekurencyjnie wykonaj eval_statement z nowym stanem
-    % 3b. w innym wypadku, aktualny stan do końcowy stan
-
     
 eval_statement(statement(loop(Body)), State, NextState) :-
     state_stack_pop(State,Val2,Val,State2),
