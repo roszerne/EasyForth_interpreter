@@ -1,0 +1,2 @@
+: loop-test  10 0 do i . loop ;
+loop-test
